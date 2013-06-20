@@ -14,7 +14,7 @@
     return $(window).keypress(function(event) {
       console.log('hit');
       if (event.keyCode === 119) {
-        return $.ajax({
+        $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
           type: 'POST',
           data: {
@@ -22,6 +22,9 @@
           },
           dataType: 'jsonp'
         });
+        return $('.main').animate({
+          top: '-=1'
+        }, 0);
       } else if (event.keyCode === 115) {
         return $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',

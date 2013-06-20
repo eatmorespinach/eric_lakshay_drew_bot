@@ -30,6 +30,8 @@
 					type: 'POST'
 					data: forward: 1
 					dataType: 'jsonp'
+				$('.main').animate({top: '-=1'}, 0)
+
 			else if event.keyCode == 115
 				$.ajax 
 					url: 'http://127.0.0.1:8071/motion-control/update'
