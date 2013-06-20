@@ -3,17 +3,9 @@
   $(document).ready(function() {
     var degree;
     degree = 0;
-    $('.ours').click(function() {
-      return $.ajax({
-        url: 'http://127.0.0.1:8071/motion-control/update',
-        type: 'POST',
-        data: {
-          forward: 1
-        },
-        dataType: 'jsonp'
-      });
-    });
     return $(window).keypress(function(event) {
+      var image;
+      image = $('.main');
       console.log('hit');
       console.log(degree);
       if (event.keyCode === 119) {
@@ -25,7 +17,7 @@
           },
           dataType: 'jsonp'
         });
-        return $('.main').animate({
+        return image.animate({
           top: '-=2'
         }, 0);
       } else if (event.keyCode === 115) {
@@ -37,7 +29,7 @@
           },
           dataType: 'jsonp'
         });
-        return $('.main').animate({
+        return image.animate({
           top: '+=2'
         }, 0);
       } else if (event.keyCode === 101) {
@@ -50,7 +42,7 @@
           dataType: 'jsonp'
         });
         degree += 2;
-        return $('.main').css({
+        return image.css({
           '-webkit-transform': 'rotate(' + degree + 'deg)'
         });
       } else if (event.keyCode === 113) {
@@ -63,7 +55,7 @@
           dataType: 'jsonp'
         });
         degree -= 2;
-        return $('.main').css({
+        return image.css({
           '-webkit-transform': 'rotate(' + degree + 'deg)'
         });
       } else if (event.keyCode === 100) {
@@ -75,7 +67,7 @@
           },
           dataType: 'jsonp'
         });
-        return $('.main').animate({
+        return image.animate({
           left: '+=2'
         }, 0);
       } else if (event.keyCode === 97) {
@@ -87,7 +79,7 @@
           },
           dataType: 'jsonp'
         });
-        return $('.main').animate({
+        return image.animate({
           left: '-=2'
         }, 0);
       } else if (event.keyCode === 32) {
