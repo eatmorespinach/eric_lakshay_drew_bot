@@ -7,7 +7,7 @@
 $(document).ready ->
 
 	$('.example').click ->
-		$.ajax({url: "127.0.0.1:8071/motion-control/update", data: {forward: 1}, dataType: "jsonp"});
+		$.ajax({url: "http://127.0.0.1:8071/motion-control/update", data: {forward: 1}, dataType: "jsonp"});
 
 # 	# Basic Examples
 # 	$.get '/', (data) ->
@@ -19,12 +19,10 @@ $(document).ready ->
 # 		(data) -> $('body').append "Successfully posted to the page."
 
 # 	# Advanced Settings
-$('.example').click ->
-	$.ajax '127.0.0.1:8071/motion-control/update',
-		type: 'POST'
-		data: forward: 1
-		dataType: 'jsonp'
-		error: (jqXHR, textStatus, errorThrown) ->
-			$('body').append "AJAX Error: #{textStatus}"
-		success: (data, textStatus, jqXHR) ->
-			$('body').append "Successful AJAX call: #{data}"
+	$('.ours').click ->
+		$.ajax 
+			url: 'http://127.0.0.1:8071/motion-control/update'
+			type: 'POST'
+			data: forward: 1
+			dataType: 'jsonp'
+			
