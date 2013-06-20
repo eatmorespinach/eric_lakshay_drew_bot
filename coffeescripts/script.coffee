@@ -16,9 +16,16 @@ $(document).ready ->
 
 # 	# Advanced Settings
 	degree = 0
-	
+	image = $('.main')
+
+	# function moveLoop() {
+ #        image.animate({
+ #          top: '-=2'
+ #        }, 100, 'linear', function(){moveloop();});
+ #    }
+
 	$(window).keypress (event)->
-		image = $('.main')
+		
 		console.log('hit')
 		console.log(degree)
 		if  event.keyCode == 119
@@ -72,6 +79,7 @@ $(document).ready ->
 				type: 'POST'
 				data: strafe: 0
 				dataType: 'jsonp'
+			image.stop()
 
 
 		
