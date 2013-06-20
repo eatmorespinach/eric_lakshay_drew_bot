@@ -26,7 +26,7 @@
           top: '-=1'
         }, 0);
       } else if (event.keyCode === 115) {
-        return $.ajax({
+        $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
           type: 'POST',
           data: {
@@ -34,8 +34,11 @@
           },
           dataType: 'jsonp'
         });
+        return $('.main').animate({
+          top: '+=1'
+        }, 0);
       } else if (event.keyCode === 101) {
-        return $.ajax({
+        $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
           type: 'POST',
           data: {
@@ -43,6 +46,9 @@
           },
           dataType: 'jsonp'
         });
+        return $('.main').animate({
+          transform: 'rotate(' + '+=10' + 'deg)'
+        }, 0);
       } else if (event.keyCode === 113) {
         return $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
@@ -53,7 +59,7 @@
           dataType: 'jsonp'
         });
       } else if (event.keyCode === 100) {
-        return $.ajax({
+        $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
           type: 'POST',
           data: {
@@ -61,8 +67,11 @@
           },
           dataType: 'jsonp'
         });
+        return $('.main').animate({
+          left: '+=1'
+        }, 0);
       } else if (event.keyCode === 97) {
-        return $.ajax({
+        $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
           type: 'POST',
           data: {
@@ -70,6 +79,9 @@
           },
           dataType: 'jsonp'
         });
+        return $('.main').animate({
+          left: '-=1'
+        }, 0);
       }
     });
   });
