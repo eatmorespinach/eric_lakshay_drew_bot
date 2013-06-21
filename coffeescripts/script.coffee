@@ -18,6 +18,14 @@ $(document).ready ->
 	degree = 0
 	image = $('.main')
 
+	x = true
+
+	# moveLoop = (move)->
+	# 	loop
+	# 		console.log("are we here?")
+	# 		$('.main').animate(move, 100)
+	# 		break if x = false
+
 	# scope = (block) -> block() 
 	# fact = scope ->
 	# 	self = image.animate {
@@ -27,9 +35,16 @@ $(document).ready ->
 	# 		-> self
 	# newFact = fact
 	# fact = "" 
-    
+	
+	# moveLoop = ->
+	# 	image.animate
+	# 	top: "-=2"
+	# , 100, "linear", ->
+	# 	moveLoop()    
 
 	$(window).keypress (event)->
+		console.log('hit')
+		console.log(degree)
 		if event.keyCode == 32
 			$.ajax 
 				url: 'http://127.0.0.1:8071/motion-control/update'
@@ -38,15 +53,25 @@ $(document).ready ->
 				dataType: 'jsonp'
 			image.stop()
 
-		console.log('hit')
-		console.log(degree)
-		if  event.keyCode == 119
+			
+		else if  event.keyCode == 119
 			$.ajax 
 				url: 'http://127.0.0.1:8071/motion-control/update'
 				type: 'POST'
 				data: forward: 1
 				dataType: 'jsonp'
-			image.animate({top: '-=2'}, 0)
+			loop
+				console.log("are we here?")
+				$('.main').animate({
+					top: '-=2'}
+				, 500
+				)
+				break if x == false
+
+
+			#move = {top: '-=2'}
+			#moveLoop({top: '-=2'})
+			# image.animate({top: '-=2'}, 0) 
 			#newFact		
 			
 
