@@ -8,3 +8,9 @@
 	-ms-transform: rotate(0deg);
 	-webkit-transform: rotate(0deg);
 }
+
+.map {
+
+	
+	-webkit-transform: scale(10);
+}

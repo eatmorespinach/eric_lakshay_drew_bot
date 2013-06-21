@@ -4,7 +4,7 @@ $(function(){
   $(document).ready(function() {
     var degree = 0;
     
-    var interval_delay = 50;
+    var interval_delay = 10;
     var original_top = $('.main').css('top');
     var top_position = parseInt(original_top); 
     var original_left = $('.main').css('left');
