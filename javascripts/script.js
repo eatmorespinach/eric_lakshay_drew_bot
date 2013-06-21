@@ -21,7 +21,6 @@ $(function(){
       if (event.keyCode === 32) {
         $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
-          type: 'POST',
           data: {
             strafe: 0
           },
@@ -31,7 +30,6 @@ $(function(){
       } else if (event.keyCode === 119) {
         $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
-          type: 'POST',
           data: {
             forward: 1
           },
@@ -47,7 +45,6 @@ $(function(){
       } else if (event.keyCode === 115) {
         $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
-          type: 'POST',
           data: {
             forward: -1
           },
@@ -61,7 +58,6 @@ $(function(){
       } else if (event.keyCode === 101) {
         $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
-          type: 'POST',
           data: {
             turn: 1
           },
@@ -76,7 +72,6 @@ $(function(){
       } else if (event.keyCode === 113) {
         $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
-          type: 'POST',
           data: {
             turn: -1
           },
@@ -95,7 +90,6 @@ $(function(){
       } else if (event.keyCode === 100) {
         $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
-          type: 'POST',
           data: {
             strafe: 1
           },
@@ -109,7 +103,6 @@ $(function(){
       } else if (event.keyCode === 97) {
         $.ajax({
           url: 'http://127.0.0.1:8071/motion-control/update',
-          type: 'POST',
           data: {
             strafe: -1
           },
