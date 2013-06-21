@@ -17,24 +17,31 @@ $(document).ready ->
 # 	# Advanced Settings
 	degree = 0
 	image = $('.main')
-
+	x = true
 	# function moveLoop() {
- #        image.animate({
- #          top: '-=2'
- #        }, 100, 'linear', function(){moveloop();});
+ #        image.animate({top: '-=2'}, 100, 'linear', function(){moveloop();});
  #    }
 
 	$(window).keypress (event)->
-		
 		console.log('hit')
 		console.log(degree)
-		if  event.keyCode == 119
+		if event.keyCode == 32
+			$.ajax 
+				url: 'http://127.0.0.1:8071/motion-control/update'
+				type: 'POST'
+				data: strafe: 0
+				dataType: 'jsonp'
+			image.stop()
+		else if event.keyCode == 119
 			$.ajax 
 				url: 'http://127.0.0.1:8071/motion-control/update'
 				type: 'POST'
 				data: forward: 1
 				dataType: 'jsonp'
-			image.animate({top: '-=2'}, 0)
+			loop
+				console.log('works')
+				$('.main').animate({top: '-=2'}, 500)
+				break if x == false
 
 		else if event.keyCode == 115
 			$.ajax 
@@ -73,13 +80,9 @@ $(document).ready ->
 				data: strafe: -1
 				dataType: 'jsonp'
 			image.animate({left: '-=2'}, 0)
-		else if event.keyCode == 32
-			$.ajax 
-				url: 'http://127.0.0.1:8071/motion-control/update'
-				type: 'POST'
-				data: strafe: 0
-				dataType: 'jsonp'
-			image.stop()
+	
+
+		
 
 
 		
