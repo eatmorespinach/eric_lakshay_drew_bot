@@ -9,8 +9,34 @@
 	-webkit-transform: rotate(0deg);
 }
 
-.map {
-
+body {
+	left:50%;
+	top:50%;
+	margin: 0px auto;
+	background: no-repeat;
+	background-size: 70%;
 	
-	-webkit-transform: scale(10);
+    
+	-webkit-transform: scale();
+	background-image: url("http://24.media.tumblr.com/tumblr_luaqgyY6k31qzwhb0o1_500.jpg");
+}
+
+.keys {
+	float: right;
+	height:200px ;
+	display: block;
+
+
+
+}
+
+.spacebar {
+	/*float:right;*/
+	height: 50px;
+	right:0px;
+	top:200px;
+	/*display:block;*/
+	position: absolute;
+
+
 }
