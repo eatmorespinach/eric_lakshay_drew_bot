@@ -1,8 +1,7 @@
-
-
 # request = $.get '/'
 
 # $ ?= require 'jquery' # For Node.js compatibility
+
 $(document).ready ->
 
 # 	# Basic Examples
@@ -15,17 +14,30 @@ $(document).ready ->
 # 		(data) -> $('body').append "Successfully posted to the page."
 
 # 	# Advanced Settings
+
 	degree = 0
 	image = $('.main')
 
-	# function moveLoop() {
- #        image.animate({
- #          top: '-=2'
- #        }, 100, 'linear', function(){moveloop();});
- #    }
+	# scope = (block) -> block() 
+	# fact = scope ->
+	# 	self = image.animate {
+	# 		top: '-=2'	
+	# 		}, 100, 
+	# 		'linear',
+	# 		-> self
+	# newFact = fact
+	# fact = "" 
+    
 
 	$(window).keypress (event)->
-		
+		if event.keyCode == 32
+			$.ajax 
+				url: 'http://127.0.0.1:8071/motion-control/update'
+				type: 'POST'
+				data: strafe: 0
+				dataType: 'jsonp'
+			image.stop()
+
 		console.log('hit')
 		console.log(degree)
 		if  event.keyCode == 119
@@ -35,6 +47,8 @@ $(document).ready ->
 				data: forward: 1
 				dataType: 'jsonp'
 			image.animate({top: '-=2'}, 0)
+			#newFact		
+			
 
 		else if event.keyCode == 115
 			$.ajax 
@@ -73,15 +87,11 @@ $(document).ready ->
 				data: strafe: -1
 				dataType: 'jsonp'
 			image.animate({left: '-=2'}, 0)
-		else if event.keyCode == 32
-			$.ajax 
-				url: 'http://127.0.0.1:8071/motion-control/update'
-				type: 'POST'
-				data: strafe: 0
-				dataType: 'jsonp'
-			image.stop()
+	
 
+# this is for stopping the image and bot when space bar is pressed
 
+		
 		
 
 				

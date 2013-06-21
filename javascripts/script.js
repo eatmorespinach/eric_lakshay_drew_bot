@@ -5,6 +5,17 @@
     degree = 0;
     image = $('.main');
     return $(window).keypress(function(event) {
+      if (event.keyCode === 32) {
+        $.ajax({
+          url: 'http://127.0.0.1:8071/motion-control/update',
+          type: 'POST',
+          data: {
+            strafe: 0
+          },
+          dataType: 'jsonp'
+        });
+        image.stop();
+      }
       console.log('hit');
       console.log(degree);
       if (event.keyCode === 119) {
@@ -81,16 +92,6 @@
         return image.animate({
           left: '-=2'
         }, 0);
-      } else if (event.keyCode === 32) {
-        $.ajax({
-          url: 'http://127.0.0.1:8071/motion-control/update',
-          type: 'POST',
-          data: {
-            strafe: 0
-          },
-          dataType: 'jsonp'
-        });
-        return image.stop();
       }
     });
   });
