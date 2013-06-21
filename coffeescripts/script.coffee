@@ -1,8 +1,7 @@
-
-
 # request = $.get '/'
 
 # $ ?= require 'jquery' # For Node.js compatibility
+
 $(document).ready ->
 
 # 	# Basic Examples
@@ -15,12 +14,39 @@ $(document).ready ->
 # 		(data) -> $('body').append "Successfully posted to the page."
 
 # 	# Advanced Settings
+
 	degree = 0
 	image = $('.main')
+
 	x = true
 	# function moveLoop() {
  #        image.animate({top: '-=2'}, 100, 'linear', function(){moveloop();});
  #    }
+
+
+
+
+	# moveLoop = (move)->
+	# 	loop
+	# 		console.log("are we here?")
+	# 		$('.main').animate(move, 100)
+	# 		break if x = false
+
+	# scope = (block) -> block() 
+	# fact = scope ->
+	# 	self = image.animate {
+	# 		top: '-=2'	
+	# 		}, 100, 
+	# 		'linear',
+	# 		-> self
+	# newFact = fact
+	# fact = "" 
+	
+	# moveLoop = ->
+	# 	image.animate
+	# 	top: "-=2"
+	# , 100, "linear", ->
+	# 	moveLoop()    
 
 	$(window).keypress (event)->
 		console.log('hit')
@@ -32,16 +58,28 @@ $(document).ready ->
 				data: strafe: 0
 				dataType: 'jsonp'
 			image.stop()
+
 		else if event.keyCode == 119
+
 			$.ajax 
 				url: 'http://127.0.0.1:8071/motion-control/update'
 				type: 'POST'
 				data: forward: 1
 				dataType: 'jsonp'
 			loop
+
 				console.log('works')
 				$('.main').animate({top: '-=2'}, 500)
 				break if x == false
+
+				console.log("are we here?")
+				$('.main').animate({
+					top: '-=2'}
+				, 500
+				)
+				break if x == false
+
+			# image.animate({top: '-=2'}, 0) 
 
 		else if event.keyCode == 115
 			$.ajax 
@@ -81,9 +119,6 @@ $(document).ready ->
 				dataType: 'jsonp'
 			image.animate({left: '-=2'}, 0)
 	
-
-		
-
 
 		
 
