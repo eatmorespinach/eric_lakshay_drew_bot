@@ -2,8 +2,8 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-top: -38px;
-	margin-left: -75px;
+	/*margin-top: -38px;
+	margin-left: -75px;*/
 	transform: rotate(0deg);
 	-ms-transform: rotate(0deg);
 	-webkit-transform: rotate(0deg);
@@ -14,29 +14,28 @@ body {
 	top:50%;
 	margin: 0px auto;
 	background: no-repeat;
-	background-size: 70%;
-	
-    
-	-webkit-transform: scale();
+	/*background-size: 70%;*/
+	/*background-position: center center;*/
 	background-image: url("http://24.media.tumblr.com/tumblr_luaqgyY6k31qzwhb0o1_500.jpg");
 }
 
 .keys {
 	float: right;
-	height:200px ;
+	height: 150px ;
 	display: block;
-
-
-
 }
 
 .spacebar {
 	/*float:right;*/
-	height: 50px;
+	height: 37.5px;
 	right:0px;
-	top:200px;
+	top:160px;
 	/*display:block;*/
 	position: absolute;
+}
 
-
+.legend {
+	right: 60px;
+	top: 207.5px;
+	position: absolute;
 }
