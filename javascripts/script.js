@@ -15,7 +15,7 @@ $(document).ready(function() {
 
   var interval_id = null;
 
-  
+
   function signal_bot(way) {
     $.ajax({
       url: 'http://127.0.0.1:8071/motion-control/update',
@@ -188,12 +188,15 @@ $(document).ready(function() {
     clearInterval(interval_id);
     signal_bot({forward: 0});
   }
+  
+
 
 
   $(window).keypress(function(event) {
     console.log('hit');
     console.log(degree);
     console.log($('.main').height())
+    
 
     // space bar stops the robot
     if (event.keyCode === 32) {
